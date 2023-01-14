@@ -25,7 +25,8 @@ function cuantosMenores(invitados) {
   // };
   // cuantosMenores(invitados) devuelve 2
   // Tu código aca:
-
+  return Object.values(invitados).reduce((ac,inv)=>inv.edad < 18 ? ac+=1 : ac+=0,0)
+  
 }
 
 

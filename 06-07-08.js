@@ -4,6 +4,8 @@
   código dentro de las funciones ya definidas. 
   No comentar la funcion 
 */
+
+
 function crearClaseMascota() {
   class Mascota {
     constructor(nombre, dueño, actividades) {
@@ -11,6 +13,9 @@ function crearClaseMascota() {
       // ej:
       //[{actividad: 'salir a caminar', frecuencia: '1 vez al dia'}, {actividad: 'baño', frecuencia: '1 vez al mes'}]
       // Inicializar las propiedades de la mascota con los valores recibidos como argumento
+      this.nombre = nombre
+      this.dueño = dueño
+      this.actividades = actividades
       // Tu código aca:
 
     }
@@ -18,19 +23,22 @@ function crearClaseMascota() {
     getNombre() {
       // este método debe retornar el nombre de la mascota.
       // Tu código aca:
+      return this.nombre
 
     }
 
     getDueño() {
       // El método debe retornar nombre y apellido del dueño (concatenados).
       // Tu código aca:
-    
+      return Object.values(this.dueño).join(" ")
+
     }
 
     addActividad(actividad, frecuencia) {
       // El método recibe un string 'actividad' y otro string 'frecuencia'  y debe agregarlo al arreglo de actividades de la mascota.
       // No debe retornar nada.
       // Tu código aca:
+      this.actividades.push({actividad,frecuencia})
 
     }
 
@@ -40,7 +48,7 @@ function crearClaseMascota() {
       // [{actividad: 'salir a caminar', frecuencia: '1 vez al dia'}, {actividad: 'baño', frecuencia: '1 vez al mes'}]
       // mascotas.getActividades() debería devolver ['salir a caminar, 'baño']
       // Tu código aca:
-     
+      return this.actividades.map(ac=>ac.actividad)
     }
 
     getFrecuencia(actividad) {
@@ -49,7 +57,7 @@ function crearClaseMascota() {
       // [{actividad: 'salir a caminar', frecuencia: '1 vez al dia'}, {actividad: 'baño', frecuencia: '1 vez al mes'}]
       // mascotas.getFrecuencia('baño') debería devolver '1 vez al mes'
       // Tu código aca:
-      
+      return this.actividades.find(v=>v.actividad === actividad).frecuencia
     }
   }
 

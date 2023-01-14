@@ -9,7 +9,7 @@ function doble(array) {
   // ej:
   //doble([1, 2, 3]) devuelve [2, 4, 6]
   // Tu código aca:
-
+  return array.map(n=>n*2)
 }
 
 // No modifiques nada debajo de esta linea //

@@ -12,9 +12,11 @@ function fakeBinary2(string) {
   // fakeBinary2('5627') devuelve "1101"
   // fakeBinary("729") devuelve "101"
   // Tu código aca:
-
+  return Array.from(string).map(n => parseInt(n) < 5 ? "0" :"1").join("")
 }
 
 // No modifiques nada debajo de esta linea //
 
 module.exports = fakeBinary2
+
+console.log(fakeBinary2("5627"))

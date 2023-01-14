@@ -12,7 +12,15 @@ function pedirComida(array) {
   // pedirComida([{nombre: "Harry", dieta: "standard"}, {nombre: "Luna", dieta: 'vegan'}, {nombre: "Goyle", dieta: "standard"}])
   // retorna {standard: 2, vegan: 1}
   // Tu código aca:
-
+  let orders = {}
+  array.map((ord)=>{
+    if (orders[ord.dieta] === undefined) {
+        orders[ord.dieta] = 1
+    }else{
+      orders[ord.dieta] += 1
+    }
+  })
+  return orders
 }
 
 // No modifiques nada debajo de esta linea //
